@@ -14,7 +14,7 @@ class ActivitieController extends Controller
      */
     public function index()
     {
-        
+        return Activitie::all();
     }
 
     /**
@@ -24,7 +24,7 @@ class ActivitieController extends Controller
      */
     public function create()
     {
-        return view('actividade');
+       
     }
 
     /**
