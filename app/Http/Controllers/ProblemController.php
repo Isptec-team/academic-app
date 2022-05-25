@@ -15,7 +15,7 @@ class ProblemController extends Controller
      */
     public function index()
     {
-        return Problem::all();
+        return Problem::paginate(4);
     }
 
     /**

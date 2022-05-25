@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activitie;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ActivitieController extends Controller
@@ -14,7 +15,7 @@ class ActivitieController extends Controller
      */
     public function index()
     {
-        return Activitie::all();
+        return Activitie::with('category')->paginate(4);
     }
 
     /**
@@ -38,24 +39,11 @@ class ActivitieController extends Controller
         $request->validate([
             'data' => 'required',
             'local' => 'required',
-            'preletores' => 'required'
+            'preletores' => 'required',
+            'id_categoria' => 'required'
         ]);
 
         $input = $request->all();
-
-        if($request->hasFile('img'))
-        {
-            $destination_path = 'public/images/activities';
-            if($request->file('img')->isValid())
-            {
-
-                $image = $request->file('img');
-                $image_name = $image->getClientOriginalName();
-                $path = $request->file('img')->storeAs($destination_path, $image_name);
-
-                $input['img'] = $image_name;
-            }
-        }
         
         return Activitie::create($input);
     }
@@ -68,7 +56,9 @@ class ActivitieController extends Controller
      */
     public function show($id)
     {
-        return Activitie::find($id);
+
+        $activities = Activitie::with('category')->find($id); 
+        return $activities;
     }
 
 

@@ -14,6 +14,12 @@ class Activitie extends Model
         'data',
         'local',
         'descricao',
-        'preletores'
+        'preletores',
+        'id_categoria'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class,"id_categoria");
+    }
 }
