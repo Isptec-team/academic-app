@@ -33,7 +33,7 @@ class UploadController extends Controller
                 return response()->json([
                     'success' => true,
                     'data' => $path
-                ], 200);
+                ], 100);
             }
         }
     }

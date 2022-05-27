@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->string('data',12);
             $table->text('local');
             $table->text('descricao');

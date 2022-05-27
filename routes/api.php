@@ -23,7 +23,7 @@ use App\Models\Marathon;
 */
 
 Route::prefix('v1')->group(function(){
-    Route::apiResource('/problema', ProblemController::class);
+    Route::apiResource('/problema/{limit}', ProblemController::class);
 });
 
 Route::prefix('v1')->group(function(){
