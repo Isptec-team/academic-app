@@ -1,0 +1,1 @@
+web: vendor/bin/heriku-php-apache2 public/
