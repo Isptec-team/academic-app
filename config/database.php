@@ -71,7 +71,7 @@ return [
             'url' => $DATABASE_URL = parse_url('postgres://ggyvleunnbmaql:298646da7aecff2113024496d116e96b1672a587705580c5158eeedb331d8111@ec2-52-30-67-143.eu-west-1.compute.amazonaws.com:5432/d4tuf8fh7d3jvr');
             'host' => $DATABASE_URL["host"],
             'port' => $DATABASE_URL["port"],
-            'database' => ltrim($DATABASE_URL["path"], "/");
+            'database' => ltrim($DATABASE_URL["path"], "/"),
             'username' => $DATABASE_URL["user"],
             'password' => $DATABASE_URL["pass"],
             'charset' => 'utf8',
