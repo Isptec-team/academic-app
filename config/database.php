@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Str;
+use Illuminate\Support\Str
+    
+    $DATABASE_URL = parse_url('postgres://ggyvleunnbmaql:298646da7aecff2113024496d116e96b1672a587705580c5158eeedb331d8111@ec2-52-30-67-143.eu-west-1.compute.amazonaws.com:5432/d4tuf8fh7d3jvr');
 
 return [
 
@@ -16,8 +18,6 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'pgsql'),
-    
-    $DATABASE_URL = parse_url('postgres://ggyvleunnbmaql:298646da7aecff2113024496d116e96b1672a587705580c5158eeedb331d8111@ec2-52-30-67-143.eu-west-1.compute.amazonaws.com:5432/d4tuf8fh7d3jvr');
     
 
     /*
