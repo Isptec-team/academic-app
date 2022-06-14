@@ -17,23 +17,23 @@ class UploadController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function upload(Request $request)
-    {
-
+    {   
         $request->validate([
-            'img' => 'required|mimes:jpg,png,jpeg'
+            'img' => 'required|image|mimes:jpg,png,jpeg'
         ]);
 
         if($request->hasFile('img'))
         {
-           
             if($request->file('img')->isValid())
             {
+                
                 $destination_path = 'public/images/activities';
                 $path = $request->file('img')->store($destination_path);
-                return response()->json([
+
+             return response()->json([
                     'success' => true,
-                    'data' => $path
-                ], 100);
+                    'data' => $path,
+                ], 200);
             }
         }
     }

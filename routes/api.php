@@ -23,22 +23,24 @@ use App\Models\Marathon;
 */
 
 Route::prefix('v1')->group(function(){
-    Route::apiResource('/problema/{limit}', ProblemController::class);
+    Route::apiResource('/problemas', ProblemController::class);
 });
 
 Route::prefix('v1')->group(function(){
-    Route::apiResource('/maratona', MarathonController::class);
+    Route::apiResource('/grupos', MarathonController::class);
 });
 
 Route::prefix('v1')->group(function(){
-    Route::apiResource('/atividade', ActivitieController::class);
+    Route::apiResource('/atividades', ActivitieController::class);
 });
 
 Route::prefix('v1')->group(function(){
-    Route::apiResource('/categoria', CategoryController::class);
+    Route::apiResource('/categorias', CategoryController::class);
 });
 
 Route::post('/v1/upload', [UploadController::class,'upload']);
+
+//Route::get('/v1/auth', [LoginController::class, 'authenticate']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
